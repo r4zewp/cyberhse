@@ -1,0 +1,140 @@
+.team-tiles {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.team-tiles a {
+    display: inline-block;
+}
+
+.team-tile {
+  position: relative;
+  width: calc(33.33% - 15px);
+  height: 30vh;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 15px 0 0 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #555;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: all .2s ease;
+  }
+  .btn:hover {
+    background-color: #c51d3e;
+  }
+
+.team-tile-background-csgo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/csgo.jpeg');
+  background-size: cover;
+  filter: brightness(0.7) blur(5px);
+  z-index: -1;
+  transition: all .5 ease-out;
+}
+
+.team-tile-background-dota {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/dota.jpeg');
+  background-size: cover;
+  filter: brightness(0.7) blur(5px);
+  z-index: -1;
+  transition: all .5 ease-out;
+}
+
+.team-tile-background-sc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/sc.jpeg');
+  background-size: cover;
+  filter: brightness(0.7) blur(5px);
+  z-index: -1;
+  transition: all .5 ease-out;
+}
+
+.team-tile-background-lol {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/lol.jpeg');
+  background-size: cover;
+  filter: brightness(0.7) blur(5px);
+  z-index: -1;
+  transition: all .5 ease-out;
+}
+
+.team-tile-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  transition: all .2s linear;
+}
+
+.team-tile-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  transition: all .2s linear;
+  filter: blur(0px);
+}
+
+.team-tile:hover .team-tile-background{
+  filter: brightness(0.5) blur(5px);
+  transition: all .2s ease-in-out;
+}
+
+.team-tile:hover .team-tile-title{
+    filter: blur(5px);
+}
+
+.team-tile-description {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  transition: all .5s ease-in-out;
+}
+
+.team-tile-description ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.team-tile-description li {
+  margin: 5px 0;
+}
+
+.team-tile:hover .team-tile-description {
+  right: 0;
+}

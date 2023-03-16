@@ -1,0 +1,85 @@
+{% extends 'base.html'%}
+{%load static%}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%} CHSE: {{ tag }} {% endblock title %}</title>
+</head>
+
+{%block content%}
+
+    <body>
+    <header class="header-teams-details">
+      <div class="team-banner-background">
+        <img src="{% static 'teams/img/team1.jpeg'%}">
+      </div>
+     <div class="header-content-container" id="title">
+        <div class="header-content-container-title">
+          <span>{{tag}}</span>
+        </div>
+        <div class="header-content-banner-nav">
+          <ul>
+            <a href="#title"><li>Team</li></a>
+            <a href="#players-section"><li>Players</li></a>
+            <a href="#table"><li>Info Table</li></a>
+          </ul>
+        </div>
+     </div>
+
+    </header>
+    <div class="players-content">
+    <section id="players-section">
+      <h2>Players</h2>
+
+      <div class="players-container">
+         {% for player in players %}
+        <div class="player-tile">
+          <img src="{% static 'teams/img/players/' %}{{player.surname}}.png" alt="Unk Image">
+          <div class="player-tile-overlay">
+            <ul>
+              <li><span>{{player.name}} {{player.surname}}</span></li>
+              <li><span>Nickname:</span> {{player.nickname}}</li>
+              <li><span>Age:</span> {{player.age}}</li>
+                <li><span>Role:</span> {{player.role}}</li>
+              <li><span>Status: </span>{{player.status}}</li>
+              <li><span>Map:</span> {{player.favorite_map}}</li>
+            </ul>
+          </div>
+        </div>
+         {% endfor %}
+      </div>
+
+    </section>
+
+    <h2>Info Table</h2>
+    <table class="players-table" id="table">
+      <thead>
+        <tr>
+          <th>Nickname</th>
+          <th>Age</th>
+          <th>Role</th>
+          <th>Favorite Map</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for player in players%}
+        <tr>
+          <td>{{player.nickname}}</td>
+          <td>{{player.age}}</td>
+          <td>{{player.role}}</td>
+          <td>{{player.favorite_map}}</td>
+          <td>{{player.status}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+
+
+</body>
+
+{% endblock content %}
+</html>

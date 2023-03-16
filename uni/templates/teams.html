@@ -1,0 +1,107 @@
+{%extends "base.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} CyberHSE: Teams {%endblock title%}</title>
+</head>
+
+{% block content %}
+<body>
+
+    <div class="teams-banner">
+      <img src="{% static 'teams/img/team1.jpeg' %}" alt="Banner Image 1" class="teams-banner-image active">
+      <img src="{% static 'teams/img/team2.jpeg' %}" alt="Banner Image 2" class="teams-banner-image">
+      <img src="{% static 'teams/img/team3.jpeg' %}" alt="Banner Image 3" class="teams-banner-image">
+      <img src="{% static 'teams/img/team4.jpeg' %}" alt="Banner Image 3" class="teams-banner-image">
+      <img src="{% static 'teams/img/team5.jpeg' %}" alt="Banner Image 3" class="teams-banner-image">
+	</div>
+
+    <div class="teams-content">
+        <span>Our teams</span>
+
+        <div class="team-tiles">
+
+
+                <div class="team-tile">
+                <div class="team-tile-background-csgo"></div>
+                <div class="team-tile-content">
+                  <h2 class="team-tile-title">Counter-Strike: Global Offensive</h2>
+                </div>
+                <div class="team-tile-description">
+                    <ul>
+                      <li>GlooMy</li>
+                      <li>lcr</li>
+                      <li>Bayfesty</li>
+                      <li>SoftLore</li>
+                      <li>Bagheera</li>
+                      <li></li>
+                      <li><a href="csgo" class="btn">TO ROSTER</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="team-tile">
+                <div class="team-tile-background-dota"></div>
+                <div class="team-tile-content">
+                  <h2 class="team-tile-title">Dota 2</h2>
+                </div>
+                <div class="team-tile-description">
+                  <ul>
+                      <li> Soon </li>
+                      <li></li>
+                      <li><a href="dota2" class="btn">TO ROSTER</a></li>
+                  </ul>
+                </div>
+            </div>
+
+            <div class="team-tile">
+                <div class="team-tile-background-sc"></div>
+                <div class="team-tile-content">
+                  <h2 class="team-tile-title">Starcraft II</h2>
+                </div>
+                <div class="team-tile-description">
+                  <ul>
+                      <li> Soon </li>
+                      <li></li>
+                      <li><a href="scII" class="btn">TO ROSTER</a></li>
+                  </ul>
+                </div>
+            </div>
+
+            <div class="team-tile">
+                <div class="team-tile-background-lol"></div>
+                <div class="team-tile-content">
+                  <h2 class="team-tile-title">League of Legends</h2>
+                </div>
+                <div class="team-tile-description">
+                  <ul>
+                      <li> Soon </li>
+                      <li></li>
+                      <li><a href="lol" class="btn">TO ROSTER</a></li>
+                  </ul>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+</body>
+<script>
+    let currentImageIndex = 0;
+    const bannerImages = document.querySelectorAll('.teams-banner-image');
+    setInterval(() => {
+      const nextImageIndex = (currentImageIndex + 1) % bannerImages.length;
+      bannerImages[currentImageIndex].classList.remove('active');
+      bannerImages[nextImageIndex].classList.add('active');
+      currentImageIndex = nextImageIndex;
+    }, 9000);
+
+</script>
+{% endblock content %}
+
+
+</html>

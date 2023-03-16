@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'banner.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'teams/teams_tile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'teams/teams.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'teams/teams_detail.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+	<nav class="sticky-top">
+	  <a href="/" {% if request.path == "/" %} class="active" {% endif %}>Home</a>
+	  <a href="/about" {% if request.path == '/about/' %} class="active" {% endif %}>About</a>
+	  <a href="/teams" {% if request.path == '/teams/' %} class="active" {% endif %}>Teams</a>
+	</nav>
+
+      {% block content %}
+      {% endblock %}
+
+</body>
+<script src="{% static 'scripts.js' %}"></script>
+<script src="{% static 'teams/teams.js'%}"></script>
+
+</html>

@@ -1,0 +1,46 @@
+{%extends "base.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} CyberHSE: About {% endblock title %}</title>
+
+</head>
+
+{% block content%}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'about/about_styles.css' %}">
+</head>
+<body>
+
+	<div class="about-page-cont">
+		<span>Cyberhse now hiring</span>
+	</div>
+
+	<div class="two-forms-container">
+		<div class="form-container">
+		  <h1 style="color: black">Want to apply for any roster?</h1>
+		  <form action="submit_participant" method="POST">
+			{% csrf_token %}
+			{{form}}
+			<div class="form-group">
+			  <input type="submit" value="Become a player" style="width: auto;">
+			</div>
+		  </form>
+		</div>
+		<div class="form-container">
+		  <h1 style="color: black">Or you want to become our partner?</h1>
+		  <form action="submit_company" method="POST">
+			{% csrf_token %}
+			{{company_form}}
+			<div class="form-group">
+			  <input type="submit" value="Become a partner" style="width: auto;">
+			</div>
+		  </form>
+		</div>
+	</div>
+
+</body>
+
+{% endblock content %}
+</html>

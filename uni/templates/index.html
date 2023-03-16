@@ -1,0 +1,32 @@
+{%extends "base.html" %}
+{% load static %}
+<html>
+<head>
+	<title>{%block title%}CyberHSE{% endblock title %}</title>
+</head>
+
+	{% block content %}
+<body>
+
+
+		<div class="banner">
+			<img src="{% static 'rvns.svg' %}" alt="Banner Image" class="banner-image">
+		</div>
+
+		<div class="index-content">
+			<p> Subscribe to our social networks</p>
+			<div class="button-row">
+			  <a href="https://vk.com/cyberhse" target="_blank" class="red-button">VK</a>
+			  <a href="https://www.youtube.com/@user-rv7lw8zl1t" target="_blank" class="red-button">Youtube</a>
+			  <a href="https://www.twitch.tv/cyberhse_1" target="_blank" class="red-button">Twitch</a>
+			</div>
+		</div>
+
+
+
+
+</body>
+	{% endblock content %}
+
+
+
